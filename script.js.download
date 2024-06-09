@@ -1,0 +1,108 @@
+// script.js
+document.addEventListener("DOMContentLoaded", function () {
+    const audioPlayer = document.getElementById('audio-player');
+    const playPauseButton = document.getElementById('play-pause');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    const songTitle = document.getElementById('song-title');
+
+    // Playlist array
+    const playlist = [
+        { title: "Song 1", src: "path/to/song1.mp3" },
+        { title: "Song 2", src: "path/to/song2.mp3" },
+        { title: "Song 3", src: "path/to/song3.mp3" }
+    ];
+
+    let currentSongIndex = 0;
+
+    // Load the current song
+    function loadSong(index) {
+        audioPlayer.src = playlist[index].src;
+        songTitle.textContent = playlist[index].title;
+        audioPlayer.load();
+    }
+
+    // Play or pause the song
+    playPauseButton.addEventListener('click', function () {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+            playPauseButton.textContent = 'Pause';
+        } else {
+            audioPlayer.pause();
+            playPauseButton.textContent = 'Play';
+        }
+    });
+
+    // Play the previous song
+    prevButton.addEventListener('click', function () {
+        currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
+        loadSong(currentSongIndex);
+        audioPlayer.play();
+        playPauseButton.textContent = 'Pause';
+    });
+
+    // Play the next song
+    nextButton.addEventListener('click', function () {
+        currentSongIndex = (currentSongIndex + 1) % playlist.length;
+        loadSong(currentSongIndex);
+        audioPlayer.play();
+        playPauseButton.textContent = 'Pause';
+    });
+
+    // Load the first song initially
+    loadSong(currentSongIndex);
+});
+// script.js
+document.addEventListener("DOMContentLoaded", function () {
+    const audioPlayer = document.getElementById('audio-player');
+    const playPauseButton = document.getElementById('play-pause');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    const songTitle = document.getElementById('song-title');
+
+    // Playlist array
+    const playlist = [
+        { title: "why not meri jaan", src: "Why Not Meri Jaan Ft. Young Stunners.mp3" },
+        { title: "QURANTINE", src: "QUARANTINE - Young Stunners Talha Anjum x Talhah Yunus x KR$NA (Official Music Video).mp3" },
+        { title: "Din Te Raat", src: "Din Te Raat - FUKRA INSAAN x KKartik ( Official Music Video ) !! My 26th Birthday Surprise❤️.mp3" }
+    ];
+
+    let currentSongIndex = 0;
+
+    // Load the current song
+    function loadSong(index) {
+        audioPlayer.src = playlist[index].src;
+        songTitle.textContent = playlist[index].title;
+        audioPlayer.load();
+    }
+
+    // Play or pause the song
+    playPauseButton.addEventListener('click', function () {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+            playPauseButton.textContent = 'Pause';
+        } else {
+            audioPlayer.pause();
+            playPauseButton.textContent = 'Play';
+        }
+    });
+
+    // Play the previous song
+    prevButton.addEventListener('click', function () {
+        currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
+        loadSong(currentSongIndex);
+        audioPlayer.play();
+        playPauseButton.textContent = 'Pause';
+    });
+
+    // Play the next song
+    nextButton.addEventListener('click', function () {
+        currentSongIndex = (currentSongIndex + 1) % playlist.length;
+        loadSong(currentSongIndex);
+        audioPlayer.play();
+        playPauseButton.textContent = 'Pause';
+    });
+
+    // Load the first song initially
+    loadSong(currentSongIndex);
+});
